@@ -1,0 +1,16 @@
+# proofaudit target for this paper and its formalization. Paths are relative to the proofaudit
+# project root (the repository root), so this file can be passed from anywhere:
+#
+#   .venv/bin/proofaudit run son-mcmc --config papers/son-mcmc/proofaudit-target.yaml --no-model
+#
+# Outputs land in runs/son-mcmc/<commit>/ like those of the other targets.
+
+targets:
+  son-mcmc:
+    repo: papers/son-mcmc
+    lean_root: lean
+    # proofaudit checks this against `git rev-parse HEAD` of the enclosing repository. The paper and
+    # the Lean files are not committed yet, so update it after committing.
+    commit: a93aadc28c1cade022ce7d1f8469ebf079d2903c
+    paper: papers/son-mcmc/paper/main.pdf
+    libs: [SOnMCMC]
